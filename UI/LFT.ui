@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LFTWidget</class>
+ <widget class="QWidget" name="LFTWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LFT</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab_Client">
+      <attribute name="title">
+       <string>Send</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_IP_Send">
+           <property name="text">
+            <string>IP</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_IP_Scan</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lE_IP_Send"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Port_Send">
+           <property name="text">
+            <string>Port</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Port_Scan</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lE_Port_Send"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QListView" name="lV_Send"/>
+       </item>
+       <item row="1" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="pB_Add">
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Delete">
+           <property name="text">
+            <string>Delete</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Browse_File">
+           <property name="text">
+            <string>Browse File</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Browse_Dir">
+           <property name="text">
+            <string>Browse Dir</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Clear_Send">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Send">
+           <property name="text">
+            <string>Send</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Scan">
+      <attribute name="title">
+       <string>Scan</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_IP_Scan">
+           <property name="text">
+            <string>IP</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_IP_Scan</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lE_IP_Scan"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Port_Scan">
+           <property name="text">
+            <string>Port</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Port_Scan</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lE_Port_Scan"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" rowspan="2">
+        <widget class="QListView" name="lV_Scan"/>
+       </item>
+       <item row="2" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pB_Clear_Scan">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Scan">
+           <property name="text">
+            <string>Scan</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Server">
+      <attribute name="title">
+       <string>Server</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QListView" name="lV_Server"/>
+       </item>
+       <item row="0" column="1">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="pB_Clear_Server">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_Start">
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pB_End">
+           <property name="text">
+            <string>End</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_Setting">
+      <attribute name="title">
+       <string>Setting</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_Server">
+         <property name="text">
+          <string>Server:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_Client">
+         <property name="text">
+          <string>Client</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_Client_port">
+           <property name="text">
+            <string>port</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Client_port</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lE_Client_port"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_Client_IP">
+           <property name="text">
+            <string>server IP</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Client_IP</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lE_Client_IP"/>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="pB_Apply">
+         <property name="text">
+          <string>Apply</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="pB_Reset">
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="lE_Server_save_path"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_Server_save_path">
+           <property name="text">
+            <string>save path</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Server_save_path</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_Server_IP">
+           <property name="text">
+            <string>listen IP</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Server_IP</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_Server_name">
+           <property name="text">
+            <string>name</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Server_name</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lE_Server_IP"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_Server_port">
+           <property name="text">
+            <string>port</string>
+           </property>
+           <property name="buddy">
+            <cstring>lE_Server_port</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lE_Server_name"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lE_Server_port"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="pB_Browse_save_path">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>pB_Send</tabstop>
+  <tabstop>pB_Add</tabstop>
+  <tabstop>pB_Delete</tabstop>
+  <tabstop>pB_Browse_File</tabstop>
+  <tabstop>pB_Clear_Send</tabstop>
+  <tabstop>lV_Send</tabstop>
+  <tabstop>lE_IP_Scan</tabstop>
+  <tabstop>lE_Port_Scan</tabstop>
+  <tabstop>pB_Scan</tabstop>
+  <tabstop>pB_Clear_Scan</tabstop>
+  <tabstop>lV_Scan</tabstop>
+  <tabstop>pB_Start</tabstop>
+  <tabstop>pB_End</tabstop>
+  <tabstop>pB_Clear_Server</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
