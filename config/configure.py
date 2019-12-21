@@ -1,18 +1,23 @@
 # -*- coding: utf-8 -*-
 
 import os
-import configparser
-import socket
+from configparser import ConfigParser
+from socket import gethostname
 
 rootPath = os.path.dirname(__file__)
+
+# make dirs if not exist
+if not os.path.isdir(rootPath):
+    os.makedirs(rootPath, mode=0o777)
+#current config path
 configPath = os.path.join(rootPath, "config.ini")
 
-conf = configparser.ConfigParser()
+conf = ConfigParser()
 
 
 class Config(object):
     class server(object):
-        name = socket.gethostname()+"-LFT-Server"
+        name = gethostname()+"-LFT-Server"
         ip = "0.0.0.0"
         port = "6981"
         save_path = os.path.join(os.getcwd(), "receive")
@@ -27,7 +32,7 @@ def initConfig():
         conf.read(configPath)
         if not conf.has_section("server"):
             conf.add_section("server")
-        conf.set("server", "name", socket.gethostname()+"-LFT-Server")
+        conf.set("server", "name", gethostname()+"-LFT-Server")
         conf.set("server", "ip", "0.0.0.0")
         conf.set("server", "port", "6981")
         conf.set("server", "save_path", os.path.join(os.getcwd(), "receive"))

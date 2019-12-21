@@ -10,7 +10,7 @@ from UI.mainUI import Ui_LFTWidget
 from config import configure as config
 from LFT import *
 
-
+#Defined messagebox types
 class messageBoxType(Enum):
     scanFinished = 0
     emptyIPOrPort = 1
@@ -121,8 +121,8 @@ class LFTWidget(QWidget):
                 return
         else:
             QCloseEvent.accept()
-    # Handler
 
+    # Handler
     def updateScanResultHandler(self, info):
         self.__lvScanModel.insertRow(self.__lvScanModel.rowCount())
         index = self.__lvScanModel.index(
@@ -153,12 +153,11 @@ class LFTWidget(QWidget):
                 None, "Infomation", "Server now stopped")
 
     # --Client
-
-    def autoCompleteFormScan(self,index):
-        data=self.__lvScanModel.data(index,Qt.DisplayRole)
-        IPAddr=data.split()[1]
-        IP=IPAddr.split(":")[0]
-        port=IPAddr.split(":")[1]
+    def autoCompleteFormScan(self, index):
+        data = self.__lvScanModel.data(index, Qt.DisplayRole)
+        IPAddr = data.split()[1]
+        IP = IPAddr.split(":")[0]
+        port = IPAddr.split(":")[1]
         self.__ui.lE_IP_Send.setText(IP)
         self.__ui.lE_Port_Send.setText(port)
         self.__ui.tabWidget.setCurrentIndex(0)
@@ -169,15 +168,13 @@ class LFTWidget(QWidget):
         self.__lvSendModel.setData(index, "Source path")
         self.__ui.lV_Send.setCurrentIndex(index)
         self.__ui.lV_Send.edit(index)
-
+    # If it is empty, give a warning and delete it
     def checkIsEmpty(self):
-        # If it is empty, give a warning and delete it
         if self.__lvSendModel.data(self.__ui.lV_Send.currentIndex(), Qt.DisplayRole) == "":
             self.showMessageBox.emit(messageBoxType.emptySourcePath)
             self.on__pB_Delete__clicked()
-
+    # Delete current row
     def on__pB_Delete__clicked(self):
-        # Delete current row
         self.__lvSendModel.removeRow(self.__ui.lV_Send.currentIndex().row())
 
     def on__pB_Browse_File__clicked(self):
@@ -197,9 +194,8 @@ class LFTWidget(QWidget):
                 self.__lvSendModel.rowCount()-1, 0)
             self.__lvSendModel.setData(index, dirPath)
             self.__ui.lV_Send.setCurrentIndex(index)
-
+    # Clear rows
     def on__pB_Clear_Send__clicked(self):
-        # Clear rows
         self.__lvSendModel.removeRows(0, self.__lvSendModel.rowCount())
 
     def on__pB_Send__clicked(self):
@@ -221,7 +217,6 @@ class LFTWidget(QWidget):
             self.__lvSendModel.setData(index, LFTSend(path, ip, port))
 
     # --Scan
-
     def on__pB_Scan__clicked(self):
         ips = self.__ui.lE_IP_Scan.text()
         ports = self.__ui.lE_Port_Scan.text()
@@ -240,7 +235,6 @@ class LFTWidget(QWidget):
 
     # --Server
     def on__pB_Start__clicked(self):
-        # TODO
         ip = config.Config.server.ip
         port = config.Config.server.port
         name = config.Config.server.name
