@@ -6,6 +6,7 @@ import threading
 from enum import Enum
 from PyQt5.QtWidgets import QWidget, QMessageBox, QFileDialog, QAbstractItemView
 from PyQt5.QtCore import Qt, QStringListModel, pyqtSignal
+from PyQt5.QtGui import QIcon
 from UI.mainUI import Ui_LFTWidget
 from config import configure as config
 from LFT import *
@@ -30,6 +31,12 @@ class LFTWidget(QWidget):
         # ui
         self.__ui = Ui_LFTWidget()
         self.__ui.setupUi(self)
+        # Set icon
+        self.setWindowIcon(QIcon("./icon/LFT.ico"))
+        self.__ui.tabWidget.setTabIcon(0,QIcon("./icon/LFT.ico"))
+        self.__ui.tabWidget.setTabIcon(1,QIcon("./icon/scan.ico"))
+        self.__ui.tabWidget.setTabIcon(2,QIcon("./icon/server.ico"))
+        self.__ui.tabWidget.setTabIcon(3,QIcon("./icon/setting.ico"))
         # Send
         self.__lvSendModel = QStringListModel(self)
         self.__ui.lV_Send.setModel(self.__lvSendModel)
