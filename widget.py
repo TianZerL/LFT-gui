@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import queue
-import threading
+import queue,threading,time
 
 from enum import Enum
 from PyQt5.QtWidgets import QWidget, QMessageBox, QFileDialog, QAbstractItemView
@@ -122,6 +121,7 @@ class LFTWidget(QWidget):
                                          QMessageBox.Yes | QMessageBox.Cancel, QMessageBox.Cancel)
             if reply == QMessageBox.Yes:
                 self.__serverControlChan.put("kill")
+                time.sleep(1)
                 QCloseEvent.accept()
             else:
                 QCloseEvent.ignore()

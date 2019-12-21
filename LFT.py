@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import subprocess
+import subprocess, time
 from threading import Thread
 from queue import Queue, Empty
 
@@ -41,6 +41,8 @@ def LFTServer(infoChan, controlChan, ip="0.0.0.0", port="6981", name="LFT-Server
             pass
         if not controlChan.empty():
             LFT.terminate()
+            break
+        time.sleep(1)
     infoChan.put("__finished__")
 
 
